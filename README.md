@@ -1,7 +1,7 @@
 # Chip8-Emulator
 A simple implementation of a Chip8 (interpreter technically) emulator. The goal is to be able to play and run a few demos of Chip8 games!
------------
 
+-----------
 # Code Samples?
 ```C++
 switch(opcode & 0xF000) {
@@ -22,7 +22,7 @@ switch(opcode & 0xF000) {
 } //...
 ```
 ----------
-
 # Why?
 I thought this would be an awesome project to do. I really enjoyed working on this and better understanding bitshifting.
+
 ----------
