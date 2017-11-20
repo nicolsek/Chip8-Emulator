@@ -1,4 +1,5 @@
-#include "Chip8.h" //Self implementation, #Meta.
+#include "chip8.h" //Self implementation, #Meta.
+#include <iostream> 
 
 /**
  * @desc Initialize the Chip8 interpreter.
@@ -22,7 +23,7 @@ void Chip8::init() {
 	}
 	
 	//Clear the memory.
-	for (unsigned short clear = 0; clear < 4096) {
+	for (unsigned short clear = 0; clear < 4096; ++clear) {
 		memory[clear] = 0;
 	}
 
@@ -59,7 +60,7 @@ void Chip8::setKeys() {
  * @desc Fetch the next opcode by merging the first two.
  */
 void fetch() {
-		opcode = memory[pc] << 8 | memory[pc + 1]; //Bitwise fucking shifting. 
+		opcode = memory[PC] << 8 | memory[PC + 1]; //Bitwise fucking shifting. 
 
 }
 
@@ -68,7 +69,6 @@ void fetch() {
  */ 
 void decode() {
 	switch(opcode & 0xF000) {
-
 		case 0x0000:
 			switch(opcode & 0x00FF) {
 				case 0x0000: //Calls RCA 1802 program at address NNN. Not necessary for most ROMs.
